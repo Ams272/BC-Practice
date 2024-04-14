@@ -1,0 +1,11 @@
+{
+    "name": "MyFirstRule",
+    "description": "Diables file name issues flagged",
+    "rules": [
+        {
+            "id": "AA0215",
+            "action": "None",
+            "justification": "Define my own names"
+        }
+    ]
+}
