@@ -3,4 +3,4 @@
 .alcache
 .altemplates
 .vs/
-.vscode/
+**/.vscode/

@@ -6,6 +6,7 @@ pageextension 50402 SalesOrderSubformPageExt extends "Sales Order Subform"
         {
             field("Description 3"; Rec."Description 3")
             {
+                ToolTip = 'for further item description';
                 ApplicationArea = All;
             }
         }
