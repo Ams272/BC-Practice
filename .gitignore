@@ -5,5 +5,7 @@
 .vs/
 **/.vscode/
 **/.vscode/**
+**./.vscode/**
 .vscode/
 ./.vscode
+./.vscode/
