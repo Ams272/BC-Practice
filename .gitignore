@@ -4,3 +4,6 @@
 .altemplates
 .vs/
 **/.vscode/
+**/.vscode/**
+.vscode/
+./.vscode

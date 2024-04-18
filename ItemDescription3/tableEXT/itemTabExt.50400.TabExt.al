@@ -1,10 +1,11 @@
-tableextension 50400 itemExt extends Item
+tableextension 50400 appitemExt extends Item
 {
     fields
     {
-        field(50400; "Description 3"; Text[100])
+        field(50400; "appDescription 3"; Text[100])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
+            caption = 'Description 3';
         }
     }
 }

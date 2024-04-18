@@ -1,13 +1,14 @@
-pageextension 50402 SalesOrderSubformPageExt extends "Sales Order Subform"
+pageextension 50402 appSalesOrderSubformPageExt extends "Sales Order Subform"
 {
     layout
     {
         addafter("Description 2")
         {
-            field("Description 3"; Rec."Description 3")
+            field("appDescription 3"; Rec."appDescription 3")
             {
                 ToolTip = 'for further item description';
                 ApplicationArea = All;
+                caption = 'Description 3';
             }
         }
     }
