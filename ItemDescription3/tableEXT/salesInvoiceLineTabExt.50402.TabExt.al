@@ -3,16 +3,6 @@ tableextension 50402 "BCP salesInvoiceLineTabExt" extends "Sales Invoice Line"
     fields
     {
 
-        modify("No.")
-        {
-            trigger OnAfterValidate()
-            begin
-                item.SetRange("No.", "No.");
-                if item.FindFirst() then
-                    "BCP Description 3" := item."BCP Description 3"
-            end;
-        }
-
         field(50400; "BCP Description 3"; Text[100])
         {
             DataClassification = CustomerContent;
@@ -22,7 +12,6 @@ tableextension 50402 "BCP salesInvoiceLineTabExt" extends "Sales Invoice Line"
         }
     }
 
-    var
-        item: Record Item;
+
 
 }

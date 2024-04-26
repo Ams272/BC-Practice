@@ -5,10 +5,14 @@ tableextension 50401 "BCP salesLineTabExt" extends "Sales Line"
         modify("No.")
         {
             trigger OnAfterValidate()
+            var
+                item: Record Item;
             begin
-                item.SetRange("No.", "No.");
-                if item.FindFirst() then
-                    "BCP Description 3" := item."BCP Description 3"
+                if Type = Type::Item then begin
+                    item.Get("No.");
+                    "BCP Description 3" := item."BCP Description 3";
+                end;
+
             end;
         }
 
@@ -19,6 +23,4 @@ tableextension 50401 "BCP salesLineTabExt" extends "Sales Line"
         }
     }
 
-    var
-        item: Record Item;
 }
