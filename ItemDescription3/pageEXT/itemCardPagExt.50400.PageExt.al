@@ -1,10 +1,10 @@
-pageextension 50400 appitemCardPagExt extends "Item Card"
+pageextension 50400 "BCP itemCardPagExt" extends "Item Card"
 {
     layout
     {
-        addafter("No.")
+        addafter("Description 2")
         {
-            field("appDescription 3"; Rec."appDescription 3")
+            field("BCP Description 3"; Rec."BCP Description 3")
             {
                 ApplicationArea = All;
                 Caption = 'Description 3';

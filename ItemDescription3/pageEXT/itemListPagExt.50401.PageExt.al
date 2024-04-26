@@ -1,10 +1,10 @@
-pageextension 50401 appitemListPagExt extends "Item List"
+pageextension 50401 "BCP itemListPagExt" extends "Item List"
 {
     layout
     {
-        addafter("No.")
+        addafter("Description 2")
         {
-            field("appDescription 3"; Rec."appDescription 3")
+            field("BCP Description 3"; Rec."BCP Description 3")
             {
                 ApplicationArea = All;
                 Caption = 'Description 3';

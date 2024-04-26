@@ -1,12 +1,24 @@
-tableextension 50401 appsalesLineTabExt extends "Sales Line"
+tableextension 50401 "BCP salesLineTabExt" extends "Sales Line"
 {
     fields
     {
-        field(50400; "appDescription 3"; Text[100])
+        modify("No.")
+        {
+            trigger OnAfterValidate()
+            begin
+                item.SetRange("No.", "No.");
+                if item.FindFirst() then
+                    "BCP Description 3" := item."BCP Description 3"
+            end;
+        }
+
+        field(50400; "BCP Description 3"; Text[100])
         {
             DataClassification = CustomerContent;
-            TableRelation = Item."appDescription 3";
             caption = 'Description 3';
         }
     }
+
+    var
+        item: Record Item;
 }

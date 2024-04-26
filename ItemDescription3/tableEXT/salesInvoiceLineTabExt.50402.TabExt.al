@@ -1,13 +1,28 @@
-tableextension 50402 appsalesInvoiceLineTabExt extends "Sales Invoice Line"
+tableextension 50402 "BCP salesInvoiceLineTabExt" extends "Sales Invoice Line"
 {
     fields
     {
-        field(50400; "appDescription 3"; Text[100])
+
+        modify("No.")
+        {
+            trigger OnAfterValidate()
+            begin
+                item.SetRange("No.", "No.");
+                if item.FindFirst() then
+                    "BCP Description 3" := item."BCP Description 3"
+            end;
+        }
+
+        field(50400; "BCP Description 3"; Text[100])
         {
             DataClassification = CustomerContent;
             caption = 'Description 3';
-            TableRelation = IF (Type = CONST(Item)) Item."appDescription 3" WHERE(Blocked = CONST(false),
-                                                    "Sales Blocked" = CONST(false));
+
+
         }
     }
+
+    var
+        item: Record Item;
+
 }

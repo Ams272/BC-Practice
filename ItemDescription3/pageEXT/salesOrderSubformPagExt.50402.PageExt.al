@@ -1,10 +1,10 @@
-pageextension 50402 appSalesOrderSubformPageExt extends "Sales Order Subform"
+pageextension 50402 "BCP SalesOrderSubformPageExt" extends "Sales Order Subform"
 {
     layout
     {
         addafter("Description 2")
         {
-            field("appDescription 3"; Rec."appDescription 3")
+            field("BCP Description 3"; Rec."BCP Description 3")
             {
                 ToolTip = 'for further item description';
                 ApplicationArea = All;

@@ -1,4 +1,4 @@
-pageextension 50403 "BCP postedSalesOrdLinePageExt" extends "Posted Sales Invoice Subform"
+pageextension 50404 "BCP postedSalesInvLinePageExt" extends "Posted Sales Invoice Lines"
 {
     layout
     {
@@ -9,7 +9,6 @@ pageextension 50403 "BCP postedSalesOrdLinePageExt" extends "Posted Sales Invoic
                 ApplicationArea = All;
                 ToolTip = 'Further item description';
                 caption = 'Description 3';
-
             }
         }
     }
