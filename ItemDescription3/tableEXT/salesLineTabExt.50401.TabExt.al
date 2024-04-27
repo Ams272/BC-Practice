@@ -8,7 +8,9 @@ tableextension 50401 "BCP salesLineTabExt" extends "Sales Line"
             var
                 item: Record Item;
             begin
+
                 if Type = Type::Item then begin
+                    Testfield("No.");
                     item.Get("No.");
                     "BCP Description 3" := item."BCP Description 3";
                 end;
