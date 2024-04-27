@@ -1,0 +1,11 @@
+.vscode
+.alpackages
+.alcache
+.altemplates
+.vs/
+**/.vscode/
+**/.vscode/**
+**./.vscode/**
+.vscode/
+./.vscode
+./.vscode/

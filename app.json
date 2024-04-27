@@ -1,0 +1,35 @@
+{
+  "id": "9da45a0d-4f87-47c8-9aa1-5cacebfec90d",
+  "name": "Ams",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "Description of the app : Majorly practicing Business central development",
+  "description": "Description of the app : Majorly practicing Business central development",
+  "privacyStatement": "http://bcnewserver24/",
+  "EULA": "http://bcnewserver24/",
+  "help": "http://bcnewserver24/",
+  "url": "http://bcnewserver24/",
+  "contextSensitiveHelpUrl": "http://bcnewserver24/",
+  "applicationInsightsConnectionString": "http://bcnewserver24/",
+  "logo": "./myLogo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 50400,
+      "to": 50449
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "13.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile"
+  ]
+}
