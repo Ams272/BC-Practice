@@ -23,19 +23,22 @@ pageextension 50416 "BCP CustomerListExtension" extends "Customer List"
                 ApplicationArea = All;
                 Caption = 'Upload File';
                 ToolTip = 'Upload File to BC';
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
                 Image = Import;
 
                 trigger OnAction()
                 var
-                    BCPPictureCodeunit: Codeunit "BCP UploadFile";
+                    BCPContentMgt: Codeunit "BCP Content Mgt";
                 begin
                     //Message('Worked');
-                    BCPPictureCodeunit.UploadFile(Database::Customer, Rec."No.");
+                    BCPContentMgt.UploadFile(Database::Customer, Rec."No.");
 
                 end;
+            }
+        }
+        addlast(Category_Process)
+        {
+            actionref("BCP UploadFile_Promoted"; "BCP UploadFile")
+            {
             }
         }
     }

@@ -1,4 +1,4 @@
-table 50410 "BCP Upload"
+table 50410 "BCP Content"
 {
     DataClassification = CustomerContent;
     InherentPermissions = RIMDX;

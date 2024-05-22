@@ -3,7 +3,8 @@ page 50410 "BCP Upload"
     PageType = ListPart;
     ApplicationArea = All;
     UsageCategory = None;
-    SourceTable = "BCP Upload";
+    SourceTable = "BCP Content";
+
 
     layout
     {
@@ -18,10 +19,9 @@ page 50410 "BCP Upload"
                     ToolTip = 'Filename';
                     trigger OnDrillDown()
                     var
-                        downloadFunc: Codeunit "BCP UploadFile";
+                        BCPContentMgt: Codeunit "BCP Content Mgt";
                     begin
-                        CurrPage.Update();
-                        downloadFunc.DownloadFile(rec."BCP Table ID", rec."BCP No.", rec."BCP ID");
+                        BCPContentMgt.DownloadFile(rec."BCP Table ID", rec."BCP No.", rec."BCP ID");
                     end;
                 }
 

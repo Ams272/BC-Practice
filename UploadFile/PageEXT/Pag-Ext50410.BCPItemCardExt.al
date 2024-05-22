@@ -23,21 +23,24 @@ pageextension 50410 "BCP ItemCardExt" extends "Item Card"
                 ApplicationArea = All;
                 Caption = 'Upload File';
                 ToolTip = 'Upload File to BC';
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
                 Image = Import;
 
                 trigger OnAction()
                 var
-                    BCPPictureCodeunit: Codeunit "BCP UploadFile";
+                    BCPContentMgt: Codeunit "BCP Content Mgt";
                 begin
                     //Message('Worked');
-                    BCPPictureCodeunit.UploadFile(Database::Item, Rec."No.");
+                    BCPContentMgt.UploadFile(Database::Item, Rec."No.");
 
                 end;
             }
 
+        }
+        addfirst(Category_Process)
+        {
+            actionref("BCP UploadFile_Promoted"; "BCP UploadFile")
+            {
+            }
         }
     }
 
