@@ -13,7 +13,7 @@ page 50410 "BCP Upload"
             repeater("File Upload")
             {
 
-                field("BCP File Name"; Rec."BCP File Name")
+                field("File Name"; Rec."File Name")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Filename';
@@ -21,7 +21,7 @@ page 50410 "BCP Upload"
                     var
                         BCPContentMgt: Codeunit "BCP Content Mgt";
                     begin
-                        BCPContentMgt.DownloadFile(rec."BCP Table ID", rec."BCP No.", rec."BCP ID");
+                        BCPContentMgt.DownloadFile(rec."ID");
                     end;
                 }
 

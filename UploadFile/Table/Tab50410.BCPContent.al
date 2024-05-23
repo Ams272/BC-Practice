@@ -1,18 +1,17 @@
 table 50410 "BCP Content"
 {
     DataClassification = CustomerContent;
-    InherentPermissions = RIMDX;
 
     fields
     {
-        field(1; "BCP ID"; Integer)
+        field(1; ID; Integer)
         {
             DataClassification = CustomerContent;
             AutoIncrement = true;
             Editable = false;
             Caption = 'ID';
         }
-        field(10; "BCP Table ID"; Integer)
+        field(10; "Table ID"; Integer)
         {
             DataClassification = CustomerContent;
             NotBlank = true;
@@ -20,7 +19,7 @@ table 50410 "BCP Content"
             TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Table));
 
         }
-        field(20; "BCP No."; Code[20])
+        field(20; "No."; Code[20])
         {
             DataClassification = customercontent;
             Caption = 'No.';
@@ -28,17 +27,17 @@ table 50410 "BCP Content"
 
 
         }
-        field(30; "BCP File"; Media)
+        field(30; "File"; Media)
         {
             DataClassification = CustomerContent;
             Caption = 'File';
         }
-        field(40; "BCP File Name"; text[250])
+        field(40; "File Name"; text[250])
         {
             DataClassification = CustomerContent;
             Caption = 'File Name';
         }
-        field(50; "BCP File Extension"; text[250])
+        field(50; "File Extension"; text[250])
         {
             DataClassification = CustomerContent;
             Caption = 'File Extension';
@@ -47,7 +46,7 @@ table 50410 "BCP Content"
 
     keys
     {
-        key(PK; "BCP No.", "BCP Table ID", "BCP ID")
+        key(PK; "ID")
         {
             Clustered = true;
         }

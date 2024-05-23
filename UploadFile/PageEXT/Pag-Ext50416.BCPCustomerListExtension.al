@@ -8,8 +8,8 @@ pageextension 50416 "BCP CustomerListExtension" extends "Customer List"
             {
                 ApplicationArea = All;
                 Caption = 'Upload File Factbox';
-                SubPageLink = "BCP Table ID" = const(18),
-                                "BCP No." = field("No.");
+                SubPageLink = "Table ID" = const(18),
+                                "No." = field("No.");
             }
         }
     }

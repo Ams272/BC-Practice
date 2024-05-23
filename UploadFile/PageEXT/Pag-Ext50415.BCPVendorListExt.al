@@ -8,8 +8,8 @@ pageextension 50415 "BCP VendorListExt" extends "Vendor List"
             {
                 ApplicationArea = All;
                 Caption = 'Upload File Factbox';
-                SubPageLink = "BCP Table ID" = const(23),
-                                "BCP No." = field("No.");
+                SubPageLink = "Table ID" = const(23),
+                                "No." = field("No.");
             }
         }
     }

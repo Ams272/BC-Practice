@@ -8,8 +8,8 @@ pageextension 50411 "BCP ItemListExt" extends "Item List"
             {
                 ApplicationArea = All;
                 Caption = 'Upload File Factbox';
-                SubPageLink = "BCP Table ID" = const(27),
-                                "BCP No." = field("No.");
+                SubPageLink = "Table ID" = const(27),
+                                "No." = field("No.");
             }
         }
     }

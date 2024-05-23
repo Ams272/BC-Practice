@@ -14,32 +14,29 @@ codeunit 50410 "BCP Content Mgt"
             exit;
 
         uploadTable.Init();
-        //clear(uploadtable."BCP File");
+        uploadTable."Table ID" := TableID;
+        uploadTable."No." := RecordNo;
+        uploadTable."File".ImportStream(FileInStream, fileName);
+        uploadtable."File Name" := fileName;
         uploadTable.Insert(true);
-        uploadTable."BCP Table ID" := TableID;
-        uploadTable."BCP No." := RecordNo;
-        uploadTable."BCP File".ImportStream(FileInStream, fileName);
-        uploadtable."BCP File Name" := fileName;
-        uploadTable.Insert(true);
-        uploadTable.Modify(true);
-        //Message('media uploaded : media id: %1', uploadTable."BCP File".MediaId);
+        //Message('media uploaded : media id: %1', uploadTable."File".MediaId);
 
 
     end;
 
-    procedure DownloadFile(tableId: integer; recordNo: code[20]; recid: integer)
+    procedure DownloadFile(recid: integer)
     var
         tenantMedia: Record "Tenant Media";
         uploadTable: Record "BCP Content";
         ResponseStream: InStream;
         Filename: text;
     begin
-        if not uploadTable.get(recordNo, tableId, recid) then
+        if not uploadTable.get(recid) then
             exit;
-        if not tenantMedia.Get(uploadTable."BCP File".MediaId) then
+        if not tenantMedia.Get(uploadTable."File".MediaId) then
             exit;
         tenantMedia.CalcFields(Content);
-        Filename := uploadtable."BCP File Name";
+        Filename := uploadtable."File Name";
         if Filename = '' then
             exit;
         if not tenantMedia.Content.HasValue then
